@@ -13,8 +13,8 @@ read ft
 if [ $ft = "n" ]
 then
         #Installing Nginx to get the init.d and systemd unit scripts ###only the first time
-        apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
-        apt-get install curl nginx-full nginx nginx-common libxslt-dev libpcre3 libpcre3-dev build-essential zlib1g-dev libbz2-dev libssl-dev tar unzip curl git  -y
+        apt-get update
+        apt-get install curl libgeoip-dev nginx-full nginx nginx-common libxslt-dev libpcre3 libpcre3-dev build-essential zlib1g-dev libbz2-dev libssl-dev tar unzip curl git  -y
         
         #Removing
         apt-get remove nginx-full nginx nginx-common -y
