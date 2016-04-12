@@ -10,7 +10,7 @@ clear && clear
 echo "Did you run this script before? (y/n)"
 read ft
 
-if [ $ft = "y" ]
+if [ $ft = "n" ]
 then
         #Installing Nginx to get the init.d and systemd unit scripts ###only the first time
         apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
@@ -69,7 +69,7 @@ cd "${latest_nginx//.tar*}"
 make
 make install
 
-if [ $ft = "y" ]
+if [ $ft = "n" ]
 then
         #Configure Nginx service
         systemctl unmask nginx.service
@@ -79,7 +79,7 @@ then
         service nginx start
 fi
 
-if [ $ft = "n" ]
+if [ $ft = "y" ]
 then
         service nginx stop
         service nginx start
