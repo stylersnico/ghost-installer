@@ -29,6 +29,11 @@ latest_libressl=$(curl -L http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/ | egrep -
 (curl -fLRO "http://nginx.org/download/${latest_nginx}" && tar -xaf "${latest_nginx}") &
 wait
 
+echo "This the release going to be installed on your server:"
+echo "$latest_nginx"
+echo "$latest_libressl"
+sleep 3
+
 cd "${latest_nginx//.tar*}"
 
 
@@ -77,6 +82,7 @@ then
         mkdir /usr/local/etc/nginx/body
         service nginx stop
         service nginx start
+        echo " You should reboot your server now"
 fi
 
 if [ $ft = "y" ]
