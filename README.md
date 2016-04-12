@@ -1,7 +1,5 @@
-# nginx-libressl
-Build the latest release of Nginx with the latest release of Libressl
-NSWeb Solutions Visual Change tracker
-=====================================
+Build Nginx & LibreSSL
+======================
 
 ##License
 Script for building the latest release of Nginx with the latest release of LibreSSL
