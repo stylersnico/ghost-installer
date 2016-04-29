@@ -81,23 +81,15 @@ fi
 #Install PM2 - Auto Start Ghost
 ##
 
-echo -ne "       Installaling PM2 to auto start Ghost      [..]\r"
-runuser -l ghost -c 'cd /var/www/ghost/'
-runuser -l ghost -c 'sudo npm install -g pm2'
-runuser -l ghost -c 'echo "export NODE_ENV=production" >> ~/.profile'
-runuser -l ghost -c 'source ~/.profile'
-runuser -l ghost -c 'pm2 kill'
-runuser -l ghost -c 'pm2 start index.js --name ghost'
-runuser -l ghost -c 'pm2 dump'
-runuser -l ghost -c 'sudo pm2 startup debian'
 
-if [ $? -eq 0 ]; then
-	echo -ne "       Installaling PM2 and startup script        [${CGREEN}OK${CEND}]\r"
-	echo -ne "\n"
-else
-	echo -e "        Installaling PM2 and startup script      [${CRED}FAIL${CEND}]"
-	exit 1
-fi
+echo "cd /var/www/ghost/
+npm install -g pm2
+echo "export NODE_ENV=production" >> ~/.profile
+source ~/.profile
+pm2 kill
+pm2 start index.js --name ghost
+pm2 dump
+sudo pm2 startup debian
+chmod +x /var/www/ghost/end.sh" > /var/www/ghost/end.sh
 
-echo "Congratulations, your ghost software is no available here : [${CGREEN}http://127.0.0.1:2368${CEND}]\r
-Please use a reverse proxy like nginx to access it"
+echo "Please run [${CGREEN}sudo /var/www/ghost/end.sh${CEND}] as [${CRED}ghost${CEND}] user to end the installation and follow latest instructions on github."
