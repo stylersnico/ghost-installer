@@ -92,4 +92,7 @@ pm2 dump
 sudo pm2 startup debian" > /var/www/ghost/end.sh
 chmod +x /var/www/ghost/end.sh
 
-echo "Please run [${CGREEN}sudo /var/www/ghost/end.sh${CEND}] as [${CRED}ghost${CEND}] user to end the installation and follow latest instructions on github."
+echo "Please run 
+sudo /var/www/ghost/end.sh
+as ghost user 
+to end the installation and follow latest instructions on github."
