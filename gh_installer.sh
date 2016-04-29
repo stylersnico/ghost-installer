@@ -89,7 +89,7 @@ source ~/.profile
 pm2 kill
 pm2 start index.js --name ghost
 pm2 dump
-sudo pm2 startup debian
-chmod +x /var/www/ghost/end.sh" > /var/www/ghost/end.sh
+sudo pm2 startup debian" > /var/www/ghost/end.sh
+chmod +x /var/www/ghost/end.sh
 
 echo "Please run [${CGREEN}sudo /var/www/ghost/end.sh${CEND}] as [${CRED}ghost${CEND}] user to end the installation and follow latest instructions on github."
