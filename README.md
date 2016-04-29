@@ -34,4 +34,20 @@ Included in the script
 Debian 8
 
 ##Installation
-<code>coming</code>
+<code>cd /tmp && wget --no-check-certificate https://raw.githubusercontent.com/stylersnico/ghost-installer/master/gh_installer.sh && chmod +x ./gh_installer.sh && ./gh_installer.sh</code>
+
+##Open Ghost to internet
+If you don't want to use a nginx reverse proxy, edit the following file: <code>/var/www/ghost/config.js</code>
+
+In the "Production" section, change the following:
+
+<code>host: '127.0.0.1',</code>
+
+to
+
+<code>host: '0.0.0.0',</code>
+
+And launch this command as ghost user:
+
+<code>pm2 stop 0 && pm2 start 0</code>
+
