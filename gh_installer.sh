@@ -22,10 +22,10 @@ echo ""
 #System Upgrade
 ##
 
-apt-get update &>/dev/null
-apt-get upgrade -y &>/dev/null
-aptitude install -y zip vim wget &>/dev/null
-
+apt-get update 
+apt-get upgrade -y 
+apt-get install -y zip vim wget 
+clear
 
 ##
 #Dependencies
