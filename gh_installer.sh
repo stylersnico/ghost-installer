@@ -24,7 +24,7 @@ echo ""
 
 apt-get update 
 apt-get upgrade -y 
-apt-get install -y zip vim wget 
+apt-get install -y zip vim wget curl
 clear
 
 ##
