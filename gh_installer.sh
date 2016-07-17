@@ -78,18 +78,13 @@ else
 fi
 
 ##
-#Install PM2 - Auto Start Ghost
+#Install Forever - Auto Start Ghost
 ##
 
 
 echo "cd /var/www/ghost/
-npm install -g pm2
-echo "export NODE_ENV=production" >> ~/.profile
-source ~/.profile
-pm2 kill
-pm2 start index.js --name ghost
-pm2 dump
-sudo pm2 startup debian" > /var/www/ghost/end.sh
+npm install -g forever
+NODE_ENV=production forever start index.js" > /var/www/ghost/end.sh
 chmod +x /var/www/ghost/end.sh
 
 echo "Please run 
