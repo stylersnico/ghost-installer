@@ -25,7 +25,7 @@ This script install the latest release of Ghost and the latest release of Node.J
 - Node.js
 - NPM
 - Grunt
-- PM2
+- Forever
 
 ##Dependencies
 Included in the script
@@ -49,5 +49,13 @@ to
 
 And launch this command as ghost user:
 
-<code>pm2 stop 0 && pm2 start 0</code>
+<code>
+cd /var/www/ghost/
+forever stop index.js && NODE_ENV=production forever start index.js</code>
+
+Add this to your crontab for restarting your ghost blog at each boot:
+
+<code>@reboot NODE_ENV=production forever start /var/www/ghost/index.js</code>
+
+
 
