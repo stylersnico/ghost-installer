@@ -32,7 +32,7 @@ clear
 ##
 
 echo -ne "       Installaling dependencies      [..]\r"
-curl -sL https://deb.nodesource.com/setup | sudo bash - &>/dev/null
+curl -sL https://deb.nodesource.com/setup_4.x | sudo bash - &>/dev/null
 apt-get install -y nodejs -y &>/dev/null
 
 if [ $? -eq 0 ]; then
